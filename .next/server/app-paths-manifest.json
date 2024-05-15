@@ -1,3 +1,5 @@
 {
-  "/api/uploadthing/route": "app/api/uploadthing/route.js"
+  "/api/uploadthing/route": "app/api/uploadthing/route.js",
+  "/configure/design/page": "app/configure/design/page.js",
+  "/configure/upload/page": "app/configure/upload/page.js"
 }
