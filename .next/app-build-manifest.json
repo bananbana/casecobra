@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/configure/upload/page": [
+    "/configure/design/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/configure/upload/page.js"
+      "static/chunks/app/configure/design/page.js"
     ],
     "/configure/layout": [
       "static/chunks/webpack.js",
@@ -15,11 +15,6 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/configure/design/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/configure/design/page.js"
     ]
   }
 }
