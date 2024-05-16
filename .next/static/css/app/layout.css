@@ -1,70 +1,43 @@
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/next@14.2.3_@babel+core@7.24.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/.pnpm/next@14.2.3_@babel+core@7.24.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/.pnpm/next@14.2.3_@babel+core@7.24.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@14.2.3_@babel+core@7.24.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/.pnpm/next@14.2.3_@babel+core@7.24.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/.pnpm/next@14.2.3_@babel+core@7.24.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Recursive","arguments":[{"subsets":["latin"]}],"variableName":"recursive"} ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Inter_aaf875';
+  font-family: '__Recursive_418f75';
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 300 1000;
   font-display: swap;
-  src: url(/_next/static/media/ec159349637c90ad-s.woff2) format('woff2');
+  src: url(/_next/static/media/e9e1ee19de3a4984-s.woff2) format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: '__Inter_aaf875';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/513657b02c5c193f-s.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: '__Inter_aaf875';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/fd4db3eb5472fc27-s.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: '__Inter_aaf875';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/51ed15f9841b9f9d-s.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Inter_aaf875';
+  font-family: '__Recursive_418f75';
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 300 1000;
   font-display: swap;
-  src: url(/_next/static/media/05a31a2ca4975f99-s.woff2) format('woff2');
+  src: url(/_next/static/media/2518c84b86224680-s.woff2) format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Inter_aaf875';
+  font-family: '__Recursive_418f75';
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 300 1000;
   font-display: swap;
-  src: url(/_next/static/media/d6b16ce4a6175f26-s.woff2) format('woff2');
+  src: url(/_next/static/media/2821276c547bac6b-s.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: '__Inter_aaf875';
+  font-family: '__Recursive_418f75';
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 300 1000;
   font-display: swap;
-  src: url(/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2) format('woff2');
+  src: url(/_next/static/media/745fad513dbbaaea-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}@font-face {font-family: '__Inter_Fallback_aaf875';src: local("Arial");ascent-override: 90.49%;descent-override: 22.56%;line-gap-override: 0.00%;size-adjust: 107.06%
-}.__className_aaf875 {font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';font-style: normal
+}@font-face {font-family: '__Recursive_Fallback_418f75';src: local("Arial");ascent-override: 83.04%;descent-override: 21.85%;line-gap-override: 0.00%;size-adjust: 114.40%
+}.__className_418f75 {font-family: '__Recursive_418f75', '__Recursive_Fallback_418f75';font-style: normal
 }
 
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -749,6 +722,10 @@ video {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -813,6 +790,9 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .mt-8 {
   margin-top: 2rem;
 }
@@ -830,6 +810,9 @@ video {
 }
 .inline-flex {
   display: inline-flex;
+}
+.flow-root {
+  display: flow-root;
 }
 .grid {
   display: grid;
@@ -903,6 +886,9 @@ video {
 .h-px {
   height: 1px;
 }
+.h-1 {
+  height: 0.25rem;
+}
 .max-h-\[150vh\] {
   max-height: 150vh;
 }
@@ -911,6 +897,9 @@ video {
 }
 .min-h-\[calc\(100vh-3\.5rem-1px\)\] {
   min-height: calc(100vh - 3.5rem - 1px);
+}
+.min-h-full {
+  min-height: 100%;
 }
 .w-1 {
   width: 0.25rem;
@@ -980,6 +969,9 @@ video {
 }
 .min-w-\[8rem\] {
   min-width: 8rem;
+}
+.min-w-full {
+  min-width: 100%;
 }
 .max-w-2xl {
   max-width: 42rem;
@@ -1060,6 +1052,19 @@ video {
 .animate-spin {
   animation: spin 1s linear infinite;
 }
+@keyframes flashing {
+
+  0%, 100% {
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 1;
+  }
+}
+.animate-flashing {
+  animation: flashing 1.4s infinite linear;
+}
 .cursor-default {
   cursor: default;
 }
@@ -1071,6 +1076,12 @@ video {
 }
 .select-none {
   user-select: none;
+}
+.list-inside {
+  list-style-position: inside;
+}
+.list-disc {
+  list-style-type: disc;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -1134,6 +1145,9 @@ video {
 }
 .gap-y-16 {
   row-gap: 4rem;
+}
+.gap-y-8 {
+  row-gap: 2rem;
 }
 .-space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1304,9 +1318,17 @@ video {
 .bg-destructive {
   background-color: hsl(var(--destructive));
 }
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 .bg-gray-900\/5 {
   background-color: rgb(17 24 39 / 0.05);
@@ -1478,6 +1500,10 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1489,6 +1515,9 @@ video {
 }
 .pb-24 {
   padding-bottom: 6rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
 }
 .pl-8 {
   padding-left: 2rem;
@@ -1521,6 +1550,10 @@ video {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -1575,6 +1608,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
@@ -1617,6 +1654,10 @@ video {
 .text-zinc-700 {
   --tw-text-opacity: 1;
   color: rgb(63 63 70 / var(--tw-text-opacity));
+}
+.text-zinc-900 {
+  --tw-text-opacity: 1;
+  color: rgb(24 24 27 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -1744,6 +1785,12 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.delay-100 {
+  transition-delay: 100ms;
+}
+.delay-200 {
+  transition-delay: 200ms;
+}
 @keyframes enter {
 
   from {
@@ -1757,6 +1804,16 @@ video {
     opacity: var(--tw-exit-opacity, 1);
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
+}
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.grainy-light {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFyGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDUgNzkuMTY0NTkwLCAyMDIwLzEyLzA5LTExOjU3OjQ0ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjIuMSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDI0LTA0LTIxVDE1OjU4OjUxKzAyOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI0LTA0LTIxVDE1OjU4OjUxKzAyOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyNC0wNC0yMVQxNTo1ODo1MSswMjowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozNDA0ZTNlNi1jMDMxLTljNGYtOTg1NC00ZTUyOTg2ZWMwNzIiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo2ZDlmM2FiMS03YzVhLTQxNDUtYjljYy1l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");
 }
 
 .hover\:bg-accent:hover {
@@ -2056,6 +2113,18 @@ video {
     top: auto;
   }
 
+  .sm\:col-span-12 {
+    grid-column: span 12 / span 12;
+  }
+
+  .sm\:col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
+  .sm\:col-span-9 {
+    grid-column: span 9 / span 9;
+  }
+
   .sm\:ml-4 {
     margin-left: 1rem;
   }
@@ -2078,6 +2147,18 @@ video {
 
   .sm\:flex {
     display: flex;
+  }
+
+  .sm\:grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
@@ -2104,9 +2185,31 @@ video {
     gap: 1.5rem;
   }
 
+  .sm\:gap-x-6 {
+    column-gap: 1.5rem;
+  }
+
+  .sm\:rounded-lg {
+    border-radius: var(--radius);
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
+  }
+
   .sm\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .sm\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .sm\:pb-32 {
@@ -2135,6 +2238,26 @@ video {
 
   .md\:top-1\/2 {
     top: 50%;
+  }
+
+  .md\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
+  .md\:col-span-9 {
+    grid-column: span 9 / span 9;
+  }
+
+  .md\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
+  .md\:row-end-1 {
+    grid-row-end: 1;
+  }
+
+  .md\:row-end-2 {
+    grid-row-end: 2;
   }
 
   .md\:block {
@@ -2178,6 +2301,10 @@ video {
     justify-content: space-between;
   }
 
+  .md\:gap-x-8 {
+    column-gap: 2rem;
+  }
+
   .md\:justify-self-end {
     justify-self: end;
   }
@@ -2194,6 +2321,11 @@ video {
   .md\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .md\:pb-0 {
@@ -2291,6 +2423,10 @@ video {
 
   .lg\:gap-x-0 {
     column-gap: 0px;
+  }
+
+  .lg\:gap-x-12 {
+    column-gap: 3rem;
   }
 
   .lg\:rounded-2xl {
