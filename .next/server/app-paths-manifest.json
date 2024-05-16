@@ -1,6 +1,7 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/configure/preview/page": "app/configure/preview/page.js",
   "/configure/upload/page": "app/configure/upload/page.js",
-  "/configure/design/page": "app/configure/design/page.js"
+  "/configure/design/page": "app/configure/design/page.js",
+  "/configure/preview/page": "app/configure/preview/page.js"
 }
