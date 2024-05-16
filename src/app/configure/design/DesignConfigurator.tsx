@@ -7,7 +7,7 @@ import { cn, formatPrice } from "@/lib/utils";
 import NextImage from "next/image";
 import { Rnd } from "react-rnd";
 import { RadioGroup } from "@headlessui/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   COLORS,
   FINISHES,
@@ -24,6 +24,11 @@ import {
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, CheckIcon, ChevronsUpDown, Radio } from "lucide-react";
 import { BASE_PRICE } from "@/config/products";
+import { useUploadThing } from "@/lib/uploadthing";
+import { useToast } from "@/components/ui/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { saveConfig as _saveConfig, SaveConfigArgs } from "./actions";
+import { useRouter } from "next/navigation";
 
 interface DesignConfiguratorProps {
   configId: string;
@@ -36,6 +41,26 @@ const DesignConfigurator = ({
   imageUrl,
   imageDimensions,
 }: DesignConfiguratorProps) => {
+  const { toast } = useToast();
+  const router = useRouter();
+
+  const { mutate: saveConfig } = useMutation({
+    mutationKey: ["save-config"],
+    mutationFn: async (args: SaveConfigArgs) => {
+      await Promise.all([saveConfiguration(), _saveConfig(args)]);
+    },
+    onError: () => {
+      toast({
+        title: "Something went wrong",
+        description: "There was an error on our end. Please try again.",
+        variant: "destructive",
+      });
+    },
+    onSuccess: () => {
+      router.push(`/configure/preview?id=${configId}`);
+    },
+  });
+
   const [options, setOptions] = useState<{
     color: (typeof COLORS)[number];
     model: (typeof MODELS.options)[number];
@@ -48,11 +73,93 @@ const DesignConfigurator = ({
     finish: FINISHES.options[0],
   });
 
+  const [renderedDimension, setRenderedDimension] = useState({
+    width: imageDimensions.width / 4,
+    height: imageDimensions.height / 4,
+  });
+
+  const [renderedPosition, setRenderedPosition] = useState({
+    x: 150,
+    y: 205,
+  });
+
+  const phoneCaseRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { startUpload } = useUploadThing("imageUploader");
+
+  async function saveConfiguration() {
+    try {
+      const {
+        left: caseLeft,
+        top: caseTop,
+        width,
+        height,
+      } = phoneCaseRef.current!.getBoundingClientRect();
+
+      const { left: containerLeft, top: containerTop } =
+        containerRef.current!.getBoundingClientRect();
+
+      const leftOffset = caseLeft - containerLeft;
+      const topOffset = caseTop - containerTop;
+
+      const actualX = renderedPosition.x - leftOffset;
+      const actualY = renderedPosition.y - topOffset;
+
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+
+      const userImage = new Image();
+      userImage.crossOrigin = "anonymous";
+      userImage.src = imageUrl;
+      await new Promise((resolve) => (userImage.onload = resolve));
+
+      ctx?.drawImage(
+        userImage,
+        actualX,
+        actualY,
+        renderedDimension.width,
+        renderedDimension.height
+      );
+
+      const base64 = canvas.toDataURL();
+      const base64Data = base64.split(",")[1];
+
+      const blob = base64ToBlob(base64Data, "image/png");
+      const file = new File([blob], "filename.png", { type: "image/png" });
+
+      await startUpload([file], { configId });
+    } catch (err) {
+      toast({
+        title: "Something went wrong",
+        description: "There was a problem saving you config, please try again.",
+        variant: "destructive",
+      });
+    }
+  }
+
+  function base64ToBlob(base64: string, mimeType: string) {
+    const byteCharacters = atob(base64);
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+
+    const byteArray = new Uint8Array(byteNumbers);
+    return new Blob([byteArray], { type: mimeType });
+  }
+
   return (
-    <div className="relative mt-20 grid grid-cols-3 mb-20 pb-20">
-      <div className="relative h-[37.5rem] overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center rounded-lg border-2 border-dashed border-gray-300 p12 text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+    <div className="relative mt-20 grid grid-cols-1 lg:grid-cols-3 mb-20 pb-20">
+      <div
+        ref={containerRef}
+        className="relative h-[37.5rem] overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center rounded-lg border-2 border-dashed border-gray-300 p12 text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+      >
         <div className="relative w-60 bg-opacity-50 pointer-events-none aspect-[896/1831]">
           <AspectRatio
+            ref={phoneCaseRef}
             ratio={896 / 1831}
             className="pointer-events-none relative z-50 aspect-[896/1831]"
           >
@@ -74,7 +181,7 @@ const DesignConfigurator = ({
         <Rnd
           default={{
             x: 150,
-            y: 250,
+            y: 205,
             height: imageDimensions.height / 4,
             width: imageDimensions.width / 4,
           }}
@@ -85,6 +192,18 @@ const DesignConfigurator = ({
             bottomLeft: <HandleComponent />,
             topRight: <HandleComponent />,
             topLeft: <HandleComponent />,
+          }}
+          onResizeStop={(_, __, ref, ___, { x, y }) => {
+            setRenderedDimension({
+              height: parseInt(ref.style.height.slice(0, -2)),
+              width: parseInt(ref.style.width.slice(0, -2)),
+            });
+
+            setRenderedPosition({ x, y });
+          }}
+          onDragStop={(_, data) => {
+            const { x, y } = data;
+            setRenderedPosition({ x, y });
           }}
         >
           <div className="relative w-full h-full">
@@ -97,7 +216,7 @@ const DesignConfigurator = ({
           </div>
         </Rnd>
       </div>
-      <div className="h-[37.5rem] flex flex-col bg-white">
+      <div className="h-[37.5rem] w-full col-span-full lg:col-span-1 flex flex-col bg-white">
         <ScrollArea className="relative flex-1 overflow-auto">
           <div
             aria-hidden="true"
@@ -263,7 +382,19 @@ const DesignConfigurator = ({
                     100
                 )}
               </p>
-              <Button className="w-full" size="sm">
+              <Button
+                onClick={() =>
+                  saveConfig({
+                    configId,
+                    color: options.color.value,
+                    finish: options.finish.value,
+                    material: options.material.value,
+                    model: options.model.value,
+                  })
+                }
+                className="w-full"
+                size="sm"
+              >
                 Continue
                 <ArrowRight className="h-4 w-4 ml-1.5 inline" />
               </Button>

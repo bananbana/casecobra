@@ -1,3 +1,7 @@
 {
-  "/configure/design/page": "app/configure/design/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/api/uploadthing/route": "app/api/uploadthing/route.js",
+  "/configure/design/page": "app/configure/design/page.js",
+  "/configure/upload/page": "app/configure/upload/page.js"
 }
