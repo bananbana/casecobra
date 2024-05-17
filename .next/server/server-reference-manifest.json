@@ -23,6 +23,22 @@
       "layer": {
         "app/configure/design/page": "action-browser"
       }
+    },
+    "b2e67f9148546c5e089ec00c177e2e14153309bb": {
+      "workers": {
+        "app/auth-callback/page": "(action-browser)/./node_modules/.pnpm/next@14.2.3_@babel+core@7.24.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdawiddebosz%2FDocuments%2Fcasecobra%2Fsrc%2Fapp%2Fauth-callback%2Factions.ts%22%2C%5B%22getAuthStatus%22%2C%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/auth-callback/page": "action-browser"
+      }
+    },
+    "d8dc055f017fd4a33f0fee2ed3254fc246e45b5c": {
+      "workers": {
+        "app/auth-callback/page": "(action-browser)/./node_modules/.pnpm/next@14.2.3_@babel+core@7.24.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdawiddebosz%2FDocuments%2Fcasecobra%2Fsrc%2Fapp%2Fauth-callback%2Factions.ts%22%2C%5B%22getAuthStatus%22%2C%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/auth-callback/page": "action-browser"
+      }
     }
   },
   "edge": {},
