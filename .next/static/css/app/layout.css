@@ -823,6 +823,9 @@ video {
 .aspect-\[896\/1831\] {
   aspect-ratio: 896/1831;
 }
+.h-1 {
+  height: 0.25rem;
+}
 .h-10 {
   height: 2.5rem;
 }
@@ -885,9 +888,6 @@ video {
 }
 .h-px {
   height: 1px;
-}
-.h-1 {
-  height: 0.25rem;
 }
 .max-h-\[150vh\] {
   max-height: 150vh;
@@ -1034,6 +1034,19 @@ video {
 .animate-fade-in {
   animation: fade-in 0.5s linear forwards;
 }
+@keyframes flashing {
+
+  0%, 100% {
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 1;
+  }
+}
+.animate-flashing {
+  animation: flashing 1.4s infinite linear;
+}
 @keyframes marquee {
 
   100% {
@@ -1051,19 +1064,6 @@ video {
 }
 .animate-spin {
   animation: spin 1s linear infinite;
-}
-@keyframes flashing {
-
-  0%, 100% {
-    opacity: 0.2;
-  }
-
-  20% {
-    opacity: 1;
-  }
-}
-.animate-flashing {
-  animation: flashing 1.4s infinite linear;
 }
 .cursor-default {
   cursor: default;

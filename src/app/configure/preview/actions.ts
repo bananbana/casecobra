@@ -10,11 +10,11 @@ export const createCheckoutSession = async ({
 }: {
   configId: string;
 }) => {
-  const config = await db.configuration.findUnique({
+  const configuration = await db.configuration.findUnique({
     where: { id: configId },
   });
-
-  if (!config) {
+  console.log(configuration);
+  if (!configuration) {
     throw new Error("No such configuration found");
   }
 
@@ -25,7 +25,7 @@ export const createCheckoutSession = async ({
     throw new Error("You need to be logged in");
   }
 
-  const { finish, material } = config;
+  const { finish, material } = configuration;
 
   let price = BASE_PRICE;
   if (finish === "textured") price += PRODUCT_PRICES.finish.textured;
@@ -37,7 +37,7 @@ export const createCheckoutSession = async ({
   const existingOrder = await db.order.findFirst({
     where: {
       userId: user.id,
-      configurationId: config.id,
+      configurationId: configuration.id,
     },
   });
 
@@ -48,14 +48,14 @@ export const createCheckoutSession = async ({
       data: {
         amount: price / 100,
         userId: user.id,
-        configurationId: config.id,
+        configurationId: configuration.id,
       },
     });
   }
 
   const product = await stripe.products.create({
     name: "Custom iPhone Case",
-    images: [config.imageUrl],
+    images: [configuration.imageUrl],
     default_price_data: {
       currency: "USD",
       unit_amount: price,
@@ -64,7 +64,7 @@ export const createCheckoutSession = async ({
 
   const stripeSession = await stripe.checkout.sessions.create({
     success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${order.id}`,
-    cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/configure/preview?id=${config.id}`,
+    cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/configure/preview?id=${configuration.id}`,
     payment_method_types: ["card", "paypal"],
     mode: "payment",
     shipping_address_collection: {
