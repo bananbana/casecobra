@@ -1,8 +1,12 @@
 {
-  "/page": "app/page.js",
-  "/api/auth/[kindeAuth]/route": "app/api/auth/[kindeAuth]/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/auth-callback/page": "app/auth-callback/page.js",
-  "/configure/preview/page": "app/configure/preview/page.js",
+  "/page": "app/page.js",
+  "/api/webhooks/route": "app/api/webhooks/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/uploadthing/route": "app/api/uploadthing/route.js",
+  "/api/auth/[kindeAuth]/route": "app/api/auth/[kindeAuth]/route.js",
   "/configure/upload/page": "app/configure/upload/page.js",
+  "/configure/preview/page": "app/configure/preview/page.js",
   "/configure/design/page": "app/configure/design/page.js"
 }
